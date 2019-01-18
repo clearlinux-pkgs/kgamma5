@@ -6,7 +6,7 @@
 #
 Name     : kgamma5
 Version  : 5.14.5
-Release  : 8
+Release  : 9
 URL      : https://download.kde.org/stable/plasma/5.14.5/kgamma5-5.14.5.tar.xz
 Source0  : https://download.kde.org/stable/plasma/5.14.5/kgamma5-5.14.5.tar.xz
 Source99 : https://download.kde.org/stable/plasma/5.14.5/kgamma5-5.14.5.tar.xz.sig
