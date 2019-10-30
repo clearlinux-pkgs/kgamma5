@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : kgamma5
-Version  : 5.17.1
-Release  : 25
-URL      : https://download.kde.org/stable/plasma/5.17.1/kgamma5-5.17.1.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.17.1/kgamma5-5.17.1.tar.xz
-Source1 : https://download.kde.org/stable/plasma/5.17.1/kgamma5-5.17.1.tar.xz.sig
+Version  : 5.17.2
+Release  : 26
+URL      : https://download.kde.org/stable/plasma/5.17.2/kgamma5-5.17.2.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.17.2/kgamma5-5.17.2.tar.xz
+Source1 : https://download.kde.org/stable/plasma/5.17.2/kgamma5-5.17.2.tar.xz.sig
 Summary  : Adjust your monitor's gamma settings
 Group    : Development/Tools
 License  : GPL-2.0
@@ -69,14 +69,14 @@ locales components for the kgamma5 package.
 
 
 %prep
-%setup -q -n kgamma5-5.17.1
+%setup -q -n kgamma5-5.17.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571797843
+export SOURCE_DATE_EPOCH=1572438157
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -93,10 +93,10 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1571797843
+export SOURCE_DATE_EPOCH=1572438157
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kgamma5
-cp %{_builddir}/kgamma5-5.17.1/COPYING %{buildroot}/usr/share/package-licenses/kgamma5/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/kgamma5-5.17.2/COPYING %{buildroot}/usr/share/package-licenses/kgamma5/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 pushd clr-build
 %make_install
 popd
