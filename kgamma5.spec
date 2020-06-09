@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : kgamma5
-Version  : 5.18.5
-Release  : 35
-URL      : https://download.kde.org/stable/plasma/5.18.5/kgamma5-5.18.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.18.5/kgamma5-5.18.5.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.18.5/kgamma5-5.18.5.tar.xz.sig
+Version  : 5.19.0
+Release  : 36
+URL      : https://download.kde.org/stable/plasma/5.19.0/kgamma5-5.19.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.19.0/kgamma5-5.19.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.19.0/kgamma5-5.19.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -71,15 +71,15 @@ locales components for the kgamma5 package.
 
 
 %prep
-%setup -q -n kgamma5-5.18.5
-cd %{_builddir}/kgamma5-5.18.5
+%setup -q -n kgamma5-5.19.0
+cd %{_builddir}/kgamma5-5.19.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1588700440
+export SOURCE_DATE_EPOCH=1591733877
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -95,10 +95,10 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1588700440
+export SOURCE_DATE_EPOCH=1591733877
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kgamma5
-cp %{_builddir}/kgamma5-5.18.5/COPYING %{buildroot}/usr/share/package-licenses/kgamma5/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/kgamma5-5.19.0/COPYING %{buildroot}/usr/share/package-licenses/kgamma5/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 pushd clr-build
 %make_install
 popd
