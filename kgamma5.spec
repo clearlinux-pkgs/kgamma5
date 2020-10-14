@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : kgamma5
-Version  : 5.19.4
-Release  : 39
-URL      : https://download.kde.org/stable/plasma/5.19.4/kgamma5-5.19.4.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.19.4/kgamma5-5.19.4.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.19.4/kgamma5-5.19.4.tar.xz.sig
+Version  : 5.20.0
+Release  : 40
+URL      : https://download.kde.org/stable/plasma/5.20.0/kgamma5-5.20.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.20.0/kgamma5-5.20.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.20.0/kgamma5-5.20.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -71,15 +71,15 @@ locales components for the kgamma5 package.
 
 
 %prep
-%setup -q -n kgamma5-5.19.4
-cd %{_builddir}/kgamma5-5.19.4
+%setup -q -n kgamma5-5.20.0
+cd %{_builddir}/kgamma5-5.20.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1597639375
+export SOURCE_DATE_EPOCH=1602704687
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -95,10 +95,10 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1597639375
+export SOURCE_DATE_EPOCH=1602704687
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kgamma5
-cp %{_builddir}/kgamma5-5.19.4/COPYING %{buildroot}/usr/share/package-licenses/kgamma5/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/kgamma5-5.20.0/COPYING %{buildroot}/usr/share/package-licenses/kgamma5/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 pushd clr-build
 %make_install
 popd
@@ -132,6 +132,8 @@ popd
 /usr/share/doc/HTML/es/kcontrol/kgamma5/index.docbook
 /usr/share/doc/HTML/et/kcontrol/kgamma5/index.cache.bz2
 /usr/share/doc/HTML/et/kcontrol/kgamma5/index.docbook
+/usr/share/doc/HTML/fr/kcontrol/kgamma5/index.cache.bz2
+/usr/share/doc/HTML/fr/kcontrol/kgamma5/index.docbook
 /usr/share/doc/HTML/id/kcontrol/kgamma5/index.cache.bz2
 /usr/share/doc/HTML/id/kcontrol/kgamma5/index.docbook
 /usr/share/doc/HTML/it/kcontrol/kgamma5/index.cache.bz2
@@ -144,8 +146,6 @@ popd
 /usr/share/doc/HTML/pt_BR/kcontrol/kgamma5/index.docbook
 /usr/share/doc/HTML/ru/kcontrol/kgamma5/index.cache.bz2
 /usr/share/doc/HTML/ru/kcontrol/kgamma5/index.docbook
-/usr/share/doc/HTML/sv/kcontrol/kgamma5/index.cache.bz2
-/usr/share/doc/HTML/sv/kcontrol/kgamma5/index.docbook
 /usr/share/doc/HTML/uk/kcontrol/kgamma5/index.cache.bz2
 /usr/share/doc/HTML/uk/kcontrol/kgamma5/index.docbook
 
