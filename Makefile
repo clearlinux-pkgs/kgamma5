@@ -1,5 +1,5 @@
 PKG_NAME := kgamma5
-URL = https://download.kde.org/stable/plasma/5.20.5/kgamma5-5.20.5.tar.xz
+URL = https://download.kde.org/stable/plasma/5.21.4/kgamma5-5.21.4.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common

@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : kgamma5
-Version  : 5.20.5
-Release  : 46
-URL      : https://download.kde.org/stable/plasma/5.20.5/kgamma5-5.20.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.20.5/kgamma5-5.20.5.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.20.5/kgamma5-5.20.5.tar.xz.sig
+Version  : 5.21.4
+Release  : 47
+URL      : https://download.kde.org/stable/plasma/5.21.4/kgamma5-5.21.4.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.21.4/kgamma5-5.21.4.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.21.4/kgamma5-5.21.4.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -71,15 +71,15 @@ locales components for the kgamma5 package.
 
 
 %prep
-%setup -q -n kgamma5-5.20.5
-cd %{_builddir}/kgamma5-5.20.5
+%setup -q -n kgamma5-5.21.4
+cd %{_builddir}/kgamma5-5.21.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1609872826
+export SOURCE_DATE_EPOCH=1618672690
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -95,10 +95,10 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1609872826
+export SOURCE_DATE_EPOCH=1618672690
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kgamma5
-cp %{_builddir}/kgamma5-5.20.5/COPYING %{buildroot}/usr/share/package-licenses/kgamma5/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/kgamma5-5.21.4/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kgamma5/e712eadfab0d2357c0f50f599ef35ee0d87534cb
 pushd clr-build
 %make_install
 popd
@@ -146,6 +146,8 @@ popd
 /usr/share/doc/HTML/pt_BR/kcontrol/kgamma5/index.docbook
 /usr/share/doc/HTML/ru/kcontrol/kgamma5/index.cache.bz2
 /usr/share/doc/HTML/ru/kcontrol/kgamma5/index.docbook
+/usr/share/doc/HTML/sv/kcontrol/kgamma5/index.cache.bz2
+/usr/share/doc/HTML/sv/kcontrol/kgamma5/index.docbook
 /usr/share/doc/HTML/uk/kcontrol/kgamma5/index.cache.bz2
 /usr/share/doc/HTML/uk/kcontrol/kgamma5/index.docbook
 
@@ -155,7 +157,7 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/kgamma5/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+/usr/share/package-licenses/kgamma5/e712eadfab0d2357c0f50f599ef35ee0d87534cb
 
 %files locales -f kcmkgamma.lang
 %defattr(-,root,root,-)
