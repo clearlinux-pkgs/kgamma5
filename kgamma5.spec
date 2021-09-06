@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : kgamma5
-Version  : 5.22.1
-Release  : 49
-URL      : https://download.kde.org/stable/plasma/5.22.1/kgamma5-5.22.1.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.22.1/kgamma5-5.22.1.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.22.1/kgamma5-5.22.1.tar.xz.sig
+Version  : 5.22.5
+Release  : 50
+URL      : https://download.kde.org/stable/plasma/5.22.5/kgamma5-5.22.5.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.22.5/kgamma5-5.22.5.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.22.5/kgamma5-5.22.5.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -71,34 +71,34 @@ locales components for the kgamma5 package.
 
 
 %prep
-%setup -q -n kgamma5-5.22.1
-cd %{_builddir}/kgamma5-5.22.1
+%setup -q -n kgamma5-5.22.5
+cd %{_builddir}/kgamma5-5.22.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1623810552
+export SOURCE_DATE_EPOCH=1630899028
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 %cmake ..
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1623810552
+export SOURCE_DATE_EPOCH=1630899028
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kgamma5
-cp %{_builddir}/kgamma5-5.22.1/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kgamma5/e712eadfab0d2357c0f50f599ef35ee0d87534cb
+cp %{_builddir}/kgamma5-5.22.5/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kgamma5/e712eadfab0d2357c0f50f599ef35ee0d87534cb
 pushd clr-build
 %make_install
 popd
