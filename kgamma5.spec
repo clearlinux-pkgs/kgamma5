@@ -5,14 +5,14 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : kgamma5
-Version  : 5.25.5
-Release  : 69
-URL      : https://download.kde.org/stable/plasma/5.25.5/kgamma5-5.25.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.25.5/kgamma5-5.25.5.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.25.5/kgamma5-5.25.5.tar.xz.sig
+Version  : 5.26.0
+Release  : 70
+URL      : https://download.kde.org/stable/plasma/5.26.0/kgamma5-5.26.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.26.0/kgamma5-5.26.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.26.0/kgamma5-5.26.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : GPL-2.0
+License  : CC0-1.0 GPL-2.0
 Requires: kgamma5-data = %{version}-%{release}
 Requires: kgamma5-lib = %{version}-%{release}
 Requires: kgamma5-license = %{version}-%{release}
@@ -21,7 +21,6 @@ BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : extra-cmake-modules-data
 BuildRequires : kdoctools-dev
-BuildRequires : ki18n-dev
 BuildRequires : libX11-dev libICE-dev libSM-dev libXau-dev libXcomposite-dev libXcursor-dev libXdamage-dev libXdmcp-dev libXext-dev libXfixes-dev libXft-dev libXi-dev libXinerama-dev libXi-dev libXmu-dev libXpm-dev libXrandr-dev libXrender-dev libXres-dev libXScrnSaver-dev libXt-dev libXtst-dev libXv-dev libXxf86vm-dev
 
 %description
@@ -70,15 +69,15 @@ locales components for the kgamma5 package.
 
 
 %prep
-%setup -q -n kgamma5-5.25.5
-cd %{_builddir}/kgamma5-5.25.5
+%setup -q -n kgamma5-5.26.0
+cd %{_builddir}/kgamma5-5.26.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1662505438
+export SOURCE_DATE_EPOCH=1665729057
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -94,9 +93,10 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1662505438
+export SOURCE_DATE_EPOCH=1665729057
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kgamma5
+cp %{_builddir}/kgamma5-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kgamma5/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
 cp %{_builddir}/kgamma5-%{version}/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kgamma5/e712eadfab0d2357c0f50f599ef35ee0d87534cb || :
 pushd clr-build
 %make_install
@@ -156,6 +156,7 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
+/usr/share/package-licenses/kgamma5/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
 /usr/share/package-licenses/kgamma5/e712eadfab0d2357c0f50f599ef35ee0d87534cb
 
 %files locales -f kcmkgamma.lang
