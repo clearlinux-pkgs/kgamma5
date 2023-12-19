@@ -8,11 +8,11 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : kgamma5
-Version  : 5.27.9
-Release  : 88
-URL      : https://download.kde.org/stable/plasma/5.27.9/kgamma5-5.27.9.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.27.9/kgamma5-5.27.9.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.27.9/kgamma5-5.27.9.tar.xz.sig
+Version  : 5.27.10
+Release  : 89
+URL      : https://download.kde.org/stable/plasma/5.27.10/kgamma5-5.27.10.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.27.10/kgamma5-5.27.10.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.27.10/kgamma5-5.27.10.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : CC0-1.0 GPL-2.0
@@ -74,15 +74,15 @@ locales components for the kgamma5 package.
 
 
 %prep
-%setup -q -n kgamma5-5.27.9
-cd %{_builddir}/kgamma5-5.27.9
+%setup -q -n kgamma-5.27.10
+cd %{_builddir}/kgamma-5.27.10
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1701988341
+export SOURCE_DATE_EPOCH=1702984390
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -141,11 +141,11 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1701988341
+export SOURCE_DATE_EPOCH=1702984390
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kgamma5
-cp %{_builddir}/kgamma5-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kgamma5/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
-cp %{_builddir}/kgamma5-%{version}/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kgamma5/e712eadfab0d2357c0f50f599ef35ee0d87534cb || :
+cp %{_builddir}/kgamma-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kgamma5/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
+cp %{_builddir}/kgamma-%{version}/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kgamma5/e712eadfab0d2357c0f50f599ef35ee0d87534cb || :
 pushd clr-build-avx2
 %make_install_v3  || :
 popd
